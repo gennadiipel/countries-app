@@ -8,19 +8,37 @@ import { CountryCardComponent } from './components/country-card/country-card.com
 import { CountryComponent } from './components/country/country.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { SearchComponent } from './components/search/search.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     CountryCardComponent,
-    CountryComponent
+    CountryComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+
+    MatToolbarModule,
+    MatCardModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
