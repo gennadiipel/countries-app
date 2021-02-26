@@ -15,6 +15,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchComponent } from './components/search/search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import {MatButtonModule} from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -22,19 +26,25 @@ import { HttpClientModule } from '@angular/common/http';
     ListComponent,
     CountryCardComponent,
     CountryComponent,
-    SearchComponent
+    SearchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatCardModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+
+    FlexLayoutModule
   ],
   providers: [
 

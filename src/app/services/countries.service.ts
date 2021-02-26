@@ -1,9 +1,9 @@
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
+import { Observable, throwError, interval } from "rxjs";
 import { Country } from "../interfaces/country.interface";
 
-import {catchError} from "rxjs/operators";
+import {catchError, debounce} from "rxjs/operators";
 
 @Injectable({providedIn: 'root'})
 
@@ -18,6 +18,7 @@ export class CountriesService {
     getByName(name: string): Observable<Country[]> {
         return this._httpClient.get<Country[]>(`${this._requestUrl}name/${name}`)
         .pipe(
+            // debounce(() => interval(1000)),
             catchError((error: HttpErrorResponse) => {
                 return throwError(error)
             })

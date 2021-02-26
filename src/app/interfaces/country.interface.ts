@@ -4,5 +4,6 @@ export interface Country {
     name: string,
     currencies: Currency[],
     population: number,
-    capital: string
+    capital: string,
+    alpha3Code: string
 }

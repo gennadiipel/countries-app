@@ -1,1 +1,4 @@
-<p>list works!</p>
+<h2 *ngIf="countries; notFound">Countries found: {{ countries.length }}</h2>
+<ng-template #notFound>
+    <h2>Nothing found</h2>
+</ng-template>

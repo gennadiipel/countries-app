@@ -1,15 +1,15 @@
 <mat-card>
-    <mat-card-content>
-        <form>
-            <mat-form-field appearance="outline">
-                <mat-label>Serach query</mat-label>
-                <input matInput type="text" placeholder="Mongolia" [matAutocomplete]="auto" (keypress)="search($event)">
-                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                    <mat-option>
-                        Монголия
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-        </form>
+    <mat-card-content fxLayout="row" fxLayoutAlign="center" >
+        <mat-form-field appearance="outline" fxFlex="90">
+            <mat-label>Serach query</mat-label>
+            <input matInput type="text" placeholder="Mongolia" [matAutocomplete]="auto" (keyup)="search($event)">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let country of countries" [routerLink]="['/country', country.alpha3Code]">
+                    <span>{{ country.name }} | </span>
+                    <small>population: {{ country.population | number }}</small>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="returnResults()" [disabled]="!countries">Search</button>
     </mat-card-content>
 </mat-card>
