@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SortSliceCountriesPipe } from './pipes/sort-slice-countries.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CountryCardComponent,
     CountryComponent,
     SearchComponent,
-    HomeComponent
+    HomeComponent,
+    
+    SortSliceCountriesPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ],
   providers: [
-
   ],
   bootstrap: [AppComponent]
 })

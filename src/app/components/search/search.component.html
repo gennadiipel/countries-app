@@ -4,12 +4,12 @@
             <mat-label>Serach query</mat-label>
             <input matInput type="text" placeholder="Mongolia" [matAutocomplete]="auto" (keyup)="search($event)">
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                <mat-option *ngFor="let country of countries" [routerLink]="['/country', country.alpha3Code]">
+                <mat-option *ngFor="let country of countries | sortSliceCountries" [routerLink]="['/country', country.alpha3Code]">
                     <span>{{ country.name }} | </span>
                     <small>population: {{ country.population | number }}</small>
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="returnResults()" [disabled]="!countries">Search</button>
+        <button mat-raised-button color="primary" (click)="returnResults()" [disabled]="!countries.length">Search</button>
     </mat-card-content>
 </mat-card>

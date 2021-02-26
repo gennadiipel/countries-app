@@ -11,8 +11,7 @@ import { CountriesService } from 'src/app/services/countries.service';
 })
 export class SearchComponent implements OnInit {
 
-  allCountries: Country[] = null
-  countries: Country[] = null
+  countries: Country[] = []
   searchSubscription$: Subscription
 
   @Output() onSearchButtonClicked: EventEmitter<Country[]> = new EventEmitter()
@@ -27,8 +26,7 @@ export class SearchComponent implements OnInit {
   search(event: any): void {
     if (event.target.value.length == 0) {
       // fix this repeat
-      this.countries = null
-      this.allCountries = null
+      this.countries = []
       return null
     }
 
@@ -39,21 +37,19 @@ export class SearchComponent implements OnInit {
 
     this.searchSubscription$ = this._countriesService.getByName(event.target.value)
       .subscribe(countries => {
-        this.allCountries = [...countries]
-        this.countries = countries.sort((a, b) => (a.population > b.population) ? -1 : 1).splice(0, 5)
+        this.countries = countries
       }, (error: HttpErrorResponse) => {
         if (error.status == 404) {
           console.log(404)
         }
 
-        this.countries = null
-        this.allCountries = null
+        this.countries = []
       })
   }
 
 
   returnResults(): void {
-    this.onSearchButtonClicked.emit(this.allCountries)
+    this.onSearchButtonClicked.emit(this.countries)
   }
 
 }
