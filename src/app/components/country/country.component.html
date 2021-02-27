@@ -19,19 +19,19 @@
         </mat-list-item>
         <mat-list-item>
             <mat-icon mat-list-icon>flag</mat-icon>
-            <div mat-line>{{ country.area | number }} km<sup>2</sup></div>
+            <div mat-line>{{ country.area ? (country.area | number) : 'No data' }} km<sup>2</sup></div>
             <div mat-line>Area</div>
         </mat-list-item>
         <mat-list-item>
             <mat-icon mat-list-icon>sentiment_satisfied_alt</mat-icon>
-            <div mat-line>{{ country.gini | number }}</div>
+            <div mat-line>{{ country.gini ? (country.gini | number) : 'No data' }}</div>
             <div mat-line>Gini</div>
         </mat-list-item>
         <mat-divider></mat-divider>
         <div mat-subheader>Currencies</div>
         <mat-list-item *ngFor="let currency of country.currencies">
             <mat-icon mat-list-icon>money</mat-icon>
-            <div mat-line>{{currency.name}} ({{ (currency.symbol) ? currency.symbol : 'No special symbol' }})</div>
+            <div mat-line>{{currency.name}} ({{ currency.symbol ? currency.symbol : 'No special symbol' }})</div>
             <div mat-line> {{currency.code}} </div>
         </mat-list-item>
         <mat-divider></mat-divider>
