@@ -1,4 +1,5 @@
 <div class="search-container">
     <app-search (onSearchButtonClicked)="getCountries($event)"></app-search>
 </div>
+<h2 *ngIf="!countries">Search countries you want to know more about</h2>
 <app-list [countries]="countries"></app-list>

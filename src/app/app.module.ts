@@ -20,6 +20,11 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SortSliceCountriesPipe } from './pipes/sort-slice-countries.pipe';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +51,10 @@ import { SortSliceCountriesPipe } from './pipes/sort-slice-countries.pipe';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatGridListModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatIconModule,
 
     FlexLayoutModule
   ],

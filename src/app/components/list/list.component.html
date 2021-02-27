@@ -1,4 +1,11 @@
-<h2 *ngIf="countries; notFound">Countries found: {{ countries.length }}</h2>
+<div *ngIf="countries; notFound">
+    <h2>Countries found: {{ countries.length }}</h2>
+    <div class="container" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px"
+        fxLayoutAlign="flex-start">
+        <app-country-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"
+            *ngFor="let country of countries" [country]="country"></app-country-card>
+    </div>
+</div>
 <ng-template #notFound>
     <h2>Nothing found</h2>
 </ng-template>

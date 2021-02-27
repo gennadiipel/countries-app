@@ -1,1 +1,14 @@
-<p>country-card works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ country.name }}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>Population: <small>{{ country.population | number }}</small></p>
+        <p>Area: <small>{{ country.area }} km<sup>2</sup></small></p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button color="primary" [routerLink]="['country', country.alpha3Code]">View</a>
+    </mat-card-actions>
+</mat-card>

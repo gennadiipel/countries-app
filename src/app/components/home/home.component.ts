@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
 
   getCountries(countries: Country[]): void {
     this.countries = countries
-    console.log(countries)
   }
 
 }

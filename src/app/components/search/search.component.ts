@@ -39,10 +39,6 @@ export class SearchComponent implements OnInit {
       .subscribe(countries => {
         this.countries = countries
       }, (error: HttpErrorResponse) => {
-        if (error.status == 404) {
-          console.log(404)
-        }
-
         this.countries = []
       })
   }
