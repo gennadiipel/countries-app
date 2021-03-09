@@ -9,7 +9,7 @@ import { CountriesService } from 'src/app/services/countries.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.sass']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
   countries: Country[] = []
   searchSubscription$: Subscription
@@ -19,9 +19,6 @@ export class SearchComponent implements OnInit {
   constructor(
     private _countriesService: CountriesService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   search(event: any): void {
     if (event.target.value.length == 0) {
