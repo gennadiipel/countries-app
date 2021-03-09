@@ -93,13 +93,4 @@ describe('SearchComponent', () => {
         expect(result).toEqual(null)
 
     })
-
-    it('should unsubscribe from #searchSubscription if it != null', () => {
-        component.countries = [sampleCountry, sampleCountry]
-        
-        const result = component.search(sampleEmptyInputValue)
-        
-        expect(result).toEqual(null)
-
-    })
 })
